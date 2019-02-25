@@ -51,7 +51,15 @@ class Blog extends Component {
       });
     }
     return (
-      <div>
+      <div className="Blog">
+        <nav>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+              <a href="/new-post">New Post</a>
+            </li>
+          </ul>
+        </nav>
         <section className="Posts">{posts}</section>
         <section>
           <FullPost selectedPostId={this.state.selectedPostId} />
