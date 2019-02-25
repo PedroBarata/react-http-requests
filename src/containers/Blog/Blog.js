@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Posts from '../Posts/Posts';
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import NewPost from '../NewPost/NewPost';
 import "./Blog.css";
 
@@ -15,12 +15,16 @@ class Blog extends Component {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
-              <Link to={{
+              <NavLink 
+              to="/" 
+              exact
+              activeClassName="my-active"
+              activeStyle={{color: 'red'}}>Home</NavLink>
+              <NavLink to={{
                 pathname: "/new-post",
                 hash: "#submit",
                 search: "?query-params=true"
-              }}>New Post</Link>
+              }}>New Post</NavLink>
             </li>
           </ul>
         </nav>
